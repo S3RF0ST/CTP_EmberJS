@@ -14,7 +14,7 @@ export default class OrderModel extends Model {
     return this.orderdetails.length;
   }
 
-  get statusPrepared() {
+  get isPrepared() {
     return this.status === 'prepared';
   }
 }

@@ -5,7 +5,7 @@
   <span class="ui label"> {{@model.dateCreation}} </span>
   <span> Produits Préparés ({{@model.orderdetails.quantity}})</span>
 
-  <table style="background-color: lightgray">
+  <table class="ui table">
     <tr>
       <td> Produit </td>
       <td> Quantité </td>
@@ -13,13 +13,21 @@
       <td> Montant </td>
       <td> Preparation </td>
     </tr>
-    {{#each @model.orders as |order|}}
-    <tr>
-      <td>{{order.name}}</td>
-      <td>{{@model.orderdetails}}</td>
-      <td></td>
-    </tr>
+    {{#each @model.ordersdetails as |order|}}
+      <tr>
+        <td>{{order.product.name}}</td>
+        <td>{{order.quantity}}</td>
+        <td>{{order.product.price}} euros</td>
+        <td>{{order.amount}}</td>
+        <td><input @type="checkbox" @checked="{{order.prepared}}"/></td>
+      </tr>
     {{/each}}
+
+    <tr>
+      <td>{{@model.amount}} €</td>
+      <td>{{@model.toPay}} €</td>
+    </tr>
+
   </table>
 
 {{outlet}}
