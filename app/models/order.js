@@ -13,4 +13,8 @@ export default class OrderModel extends Model {
   get count() {
     return this.orderdetails.length;
   }
+
+  get statusPrepared() {
+    return this.status === 'prepared';
+  }
 }
