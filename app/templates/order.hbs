@@ -1,2 +1,25 @@
 {{page-title "Order"}}
+  <button class="ui button brown" type="button" {{action "return"}}> Retour aux commandes à préparer </button>
+  <br>
+  <br>
+  <span class="ui label"> {{@model.dateCreation}} </span>
+  <span> Produits Préparés ({{@model.orderdetails.quantity}})</span>
+
+  <table style="background-color: lightgray">
+    <tr>
+      <td> Produit </td>
+      <td> Quantité </td>
+      <td> Prix </td>
+      <td> Montant </td>
+      <td> Preparation </td>
+    </tr>
+    {{#each @model.orders as |order|}}
+    <tr>
+      <td>{{order.name}}</td>
+      <td>{{@model.orderdetails}}</td>
+      <td></td>
+    </tr>
+    {{/each}}
+  </table>
+
 {{outlet}}
