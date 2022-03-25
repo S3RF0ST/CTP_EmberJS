@@ -1,3 +1,8 @@
+#Léo Levavasseur
+2A 
+TD 2.2
+
+
 # tds
 
 This README outlines the details of collaborating on this Ember application.
